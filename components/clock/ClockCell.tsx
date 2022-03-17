@@ -6,22 +6,17 @@ type props = {
 };
 
 const ClockCell = ({ value }: props) => {
-  const [isUp, setUp] = useState(false);
-  const [upperValue, setUpperValue] = useState("0");
+  const [prevValue, setPrevValue] = useState("0");
 
   useEffect(() => {
-    setUp(true);
-
-    setTimeout(() => {
-      setUpperValue(value);
-      setUp(false);
-    }, 900);
+    const timeoutId = setTimeout(() => setPrevValue(value), 900);
+    return () => clearTimeout(timeoutId);
   }, [value]);
 
   return (
     <div className={s.cell_outer}>
-      <div className={`${isUp ? s.cell_up : ""}`}>
-        <div className={s.cell_inner}>{upperValue}</div>
+      <div className={value !== prevValue ? s.cell_up : ""}>
+        <div className={s.cell_inner}>{prevValue}</div>
         <div className={s.cell_inner}>{value}</div>
       </div>
     </div>

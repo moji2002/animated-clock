@@ -1,39 +1,39 @@
 import { memo, useEffect, useState } from "react";
-import s from "./clock.module.scss";
 import ClockCell from "./ClockCell";
-
 import padWithZeros from "../../utils/padWithZeros";
+import s from "./clock.module.scss";
 
 const Clock = () => {
   const [time, setTime] = useState({
-    hour: "00",
-    minute: "00",
-    second: "00",
+    hours: "00",
+    minutes: "00",
+    seconds: "00",
   });
 
   const updateTime = () => {
     const now = new Date();
     setTime({
-      hour: padWithZeros(now.getHours()),
-      minute: padWithZeros(now.getMinutes()),
-      second: padWithZeros(now.getSeconds()),
+      hours: padWithZeros(now.getHours()),
+      minutes: padWithZeros(now.getMinutes()),
+      seconds: padWithZeros(now.getSeconds()),
     });
   };
 
   useEffect(() => {
-    setInterval(updateTime, 1000);
+    const intervalId = setInterval(updateTime, 1000);
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
     <div className={s.wrapper}>
-      <ClockCell value={time["hour"][0]} />
-      <ClockCell value={time["hour"][1]} />
+      <ClockCell value={time["hours"][0]} />
+      <ClockCell value={time["hours"][1]} />
       <div>:</div>
-      <ClockCell value={time["minute"][0]} />
-      <ClockCell value={time["minute"][1]} />
+      <ClockCell value={time["minutes"][0]} />
+      <ClockCell value={time["minutes"][1]} />
       <div>:</div>
-      <ClockCell value={time["second"][0]} />
-      <ClockCell value={time["second"][1]} />
+      <ClockCell value={time["seconds"][0]} />
+      <ClockCell value={time["seconds"][1]} />
     </div>
   );
 };
