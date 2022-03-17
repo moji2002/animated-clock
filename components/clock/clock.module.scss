@@ -1,0 +1,38 @@
+.wrapper{
+  display: flex;
+  align-items: center;
+
+  font-size: 45px;  
+}
+
+.cell_outer {
+  height: 80px;
+  margin: 5px;
+
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+
+  box-shadow: inset #000 3px 3px 12px 2px;
+  text-shadow: #000 5px 5px 4px;
+
+  border: 2px solid #000;
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  cursor: default;
+}
+
+.cell_up {
+  transition: transform 0.5s cubic-bezier(0.31, 1.15, 0.54, 1.04);
+  transform: translateY(-76px);
+}
+
+.cell_inner{
+  height: 76px;
+  width: 56px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
