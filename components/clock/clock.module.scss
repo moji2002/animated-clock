@@ -25,7 +25,7 @@
 }
 
 .cell_up {
-  transition: transform 0.5s cubic-bezier(.37,1.03,.25,1.05) 0.2s;
+  transition: transform 0.5s cubic-bezier(.5,1,0,1.1) 0.2s;
   transform: translateY(-76px);
 }
 
