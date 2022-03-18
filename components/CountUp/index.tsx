@@ -1,19 +1,10 @@
-import { memo, useEffect, useState } from "react";
+import { memo } from "react";
 import Odometer from "../Odometer";
-import padWithZeros from "../../utils/padWithZeros";
+import useCountUp from "../../hooks/useCountUp";
 import s from "./count-up.module.scss";
 
 const CountUp = () => {
-  const [count, setCount] = useState("0000");
-
-  const updateCount = () => {
-    setCount((c) => padWithZeros(+c + 1, 4));
-  };
-
-  useEffect(() => {
-    const intervalId = setInterval(updateCount, 1000);
-    return () => clearInterval(intervalId);
-  }, []);
+  const count = useCountUp();
 
   return (
     <div className={s.wrapper}>
