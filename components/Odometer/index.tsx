@@ -1,11 +1,11 @@
 import { memo, useEffect, useState } from "react";
-import s from "./clock.module.scss";
+import s from "./odometer.module.scss";
 
 type props = {
   value: string;
 };
 
-const ClockCell = ({ value }: props) => {
+const Odometer = ({ value }: props) => {
   const [prevValue, setPrevValue] = useState("0");
 
   useEffect(() => {
@@ -14,13 +14,13 @@ const ClockCell = ({ value }: props) => {
   }, [value]);
 
   return (
-    <div className={s.cell_outer}>
-      <div className={value !== prevValue ? s.cell_up : ""}>
-        <div className={s.cell_inner}>{prevValue}</div>
-        <div className={s.cell_inner}>{value}</div>
+    <div className={s.outer}>
+      <div className={value !== prevValue ? s.shift : ""}>
+        <div className={s.inner}>{prevValue}</div>
+        <div className={s.inner}>{value}</div>
       </div>
     </div>
   );
 };
 
-export default memo(ClockCell);
+export default memo(Odometer);

@@ -1,0 +1,31 @@
+.outer {
+  height: 80px;
+  margin: 5px;
+
+  background: linear-gradient(8deg, #000 0%, #393939 50%, #000 100%);
+  color: #fff;
+
+  box-shadow: inset #000 3px 3px 12px 2px;
+  text-shadow: #000 1px 1px 4px;
+
+  border: 2px solid #000;
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  cursor: default;
+}
+
+.inner {
+  height: 76px;
+  width: 56px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shift {
+  transition: transform 0.5s cubic-bezier(0.5, 1, 0, 1.1) 0.2s;
+  transform: translateY(-76px);
+}
