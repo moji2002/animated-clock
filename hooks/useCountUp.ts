@@ -11,6 +11,7 @@ const useCountUp = (initialState = "0000") => {
   useEffect(() => {
     const intervalId = setInterval(updateCount, 1000);
     return () => clearInterval(intervalId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return count;
