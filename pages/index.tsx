@@ -8,18 +8,16 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Animated Clock</title>
-        <meta
-          name="description"
-          content="Simple animated clock with react that I build in my spare time"
-        />
+        <title>Odometer</title>
+        <meta name="description" content="odometer with react" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <div>clock</div>
+        <h1>Clock</h1>
         <Clock />
-        <div>count up</div>
+
+        <h1 style={{ marginTop: 30 }}>Count up</h1>
         <CountUp />
       </main>
     </div>

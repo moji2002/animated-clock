@@ -1,3 +1,3 @@
-Simple animated clock
+lightweight odometer with react
 
-![clock preview](preview.gif)
+![odometer](preview.gif)
