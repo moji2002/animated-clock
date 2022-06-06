@@ -1,3 +1,3 @@
-lightweight odometer with react
+lightweight odometer for react
 
 ![odometer](preview.gif)
